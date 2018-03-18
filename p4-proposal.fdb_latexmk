@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex p4-proposal"] 1521380994 "p4-proposal.aux" "p4-proposal.bbl" "p4-proposal" 1521382590
+["bibtex p4-proposal"] 1521380994 "p4-proposal.aux" "p4-proposal.bbl" "p4-proposal" 1521382658
   "./ref.bib" 1521349855 3012 7289e4b31f30df5efb2a8d564a366df9 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "p4-proposal.aux" 1521382590 898 687c09846bc2018e1c2cc30d38a0e7f5 ""
+  "p4-proposal.aux" 1521382658 898 687c09846bc2018e1c2cc30d38a0e7f5 ""
   "p4-proposal.bcf" 0 -1 0 ""
   (generated)
   "p4-proposal.blg"
   "p4-proposal.bbl"
-["pdflatex"] 1521382589 "/home/chao/Desktop/CS5262_Proposal/p4-proposal.tex" "p4-proposal.pdf" "p4-proposal" 1521382590
+["pdflatex"] 1521382658 "/home/chao/Desktop/CS5262_Proposal/p4-proposal.tex" "p4-proposal.pdf" "p4-proposal" 1521382658
   "/etc/texmf/web2c/texmf.cnf" 1519901713 1101 af7716885e081ab43982cab7b4672c1a ""
   "/home/chao/Desktop/CS5262_Proposal/p4-proposal.tex" 1521362346 3065 e245a2ecd4a9b2ee57934f6d68013dbe ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -129,13 +129,13 @@
   "fig/MANE_1.eps" 1521349855 230709 ae5daa280db5c3dc9d800fc931649854 ""
   "fig/architecture.eps" 1521349855 6140439 c7e850c4779c79d27120209224f5e68e ""
   "motivation.tex" 1521353942 4206 70acdef03629626c11aa50f4cc1e22a3 ""
-  "p4-proposal.aux" 1521382590 898 687c09846bc2018e1c2cc30d38a0e7f5 ""
+  "p4-proposal.aux" 1521382658 898 687c09846bc2018e1c2cc30d38a0e7f5 ""
   "p4-proposal.bbl" 1521380994 49 0eba253fc001332e731e8aba3f23127b "bibtex p4-proposal"
   "p4-proposal.tex" 1521362346 3065 e245a2ecd4a9b2ee57934f6d68013dbe ""
   "plan.tex" 1521354145 33 e7ccb63a5e04690fca589ee9b25c18ad ""
   "remarkProblem.tex" 1521363257 3137 74d095b894cc32a63e92254e05ebf7e1 ""
-  "tentativeSolution.tex" 1521382589 1376 0887c9599945896638f62d49d8ef62a0 ""
+  "tentativeSolution.tex" 1521382658 1377 02083487c5e1bfba684b50062284f6d2 ""
   (generated)
+  "p4-proposal.aux"
   "p4-proposal.pdf"
   "p4-proposal.log"
-  "p4-proposal.aux"
