@@ -1,0 +1,112 @@
+%\documentclass{sig-alternate}
+%\documentclass[]{sig-alternate-05-2015}
+%\documentclass[10pt, conference, compsocconf]{IEEEtran}
+\documentclass[10pt, conference]{IEEEtran}
+\IEEEoverridecommandlockouts      % enable the \IEEEpubid command for the 'conference' class
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{accents}
+\newcommand*\underdot[1]{%
+  \underaccent{\dot}{#1}}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{mathrsfs}
+\usepackage{times}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{psfrag}
+\usepackage{array}
+\usepackage{comment}
+\usepackage{mdwmath} % part of Mark Wooding's powerful
+\usepackage{mdwtab}  % tools for math, tables, ...
+\usepackage{bm} % for the bold font Greek symbols in math mode
+\usepackage{color}
+%\usepackage[noend]{algorithmic}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{xspace}
+%\usepackage{flushend}  <-- Bear, ACM do not like balanced last page
+\usepackage{natbib}  % for small reference font size
+\def\bibfont{\footnotesize}
+\setlength{\bibsep}{0.0pt}
+
+%\usepackage{float}
+%\usepackage{natbib}  % for small reference font size
+%\def\bibfont{\scriptsize}
+%\setlength{\bibsep}{0.0pt}
+%\usepackage{enumitem}
+%\setlist{nolistsep}
+
+% INFOCOM specific space saving tips from Bo
+%\renewcommand{\baselinestretch}{0.990}
+% place it after 'documentclass' for shrinking line space. Default is 1. 0.92 is the minimum acceptable by INFOCOM
+%\usepackage[left=0.625in,right=0.625in,top=0.75in,bottom=1in]{geometry}
+% this sets the margins of the 3 sides. The numbers are the minimum acceptable by INFOCOM
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{dfn}{Definition}
+\newtheorem{pbm}{Problem}
+\newtheorem{claim}{Claim}
+
+%\remove copyright box
+%\makeatletter
+%\def\@copyrightspace{\relax}
+%\makeatother
+
+
+\begin{document}
+\sloppy
+
+\title{
+Streaming Scalable Video Sequences with Media-Aware Network Elements Implemented in P4 Programming Language
+}
+
+\author{ 
+\IEEEauthorblockN{Chao-Wen Chen$^1$, Cheng-Hsin Hsu$^2$}
+\vspace{2pt}
+\IEEEauthorblockA{$^1$Department of Computer Science, National Tsing Hua University, Taiwan}
+}
+
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+Scalable video streaming, media-aware network element, software-defined network, rate-distortion optimization
+\end{IEEEkeywords}
+
+\input{introduction}
+\input{mane}
+\input{architecture}
+\input{setup}
+\input{conclusion}
+
+%\section*{Acknowledgements}
+%This work was partially supported by the Ministry of Science and Technology of Taiwan under the grant \#106-2221-E-007-101.
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=0.7\linewidth]{noms18Demo}
+%	\caption{}
+%	\label{fig:noms18demo}
+%\end{figure}
+
+%{\small
+\bibliographystyle{abbrv}
+\bibliography{./ref}
+%}
+\end{document}
+

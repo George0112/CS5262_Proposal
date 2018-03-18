@@ -1,0 +1,55 @@
+\section{Introduction} \label{sec:introduction}
+
+In recent years, people are getting used to rely on Over-The-Top (OTT) 
+services such as Skype, Facebook, online games, video streaming, etc. 
+Among these services, video streaming is one of the services which 
+consumes the most network resources. Video streaming services needs 
+more and more bandwidth because custumers prefer higher video quality than before, and thus incurr high traffic amout on the best-effort Internet. Thus, streaming high quality video with less network resources becomes much more important.
+
+{\em Scalable Video Coding (SVC) }is one of solutions for network congestion. Each of the SVC sequences contains a base and multiple enhancement layers. Furthermore, the encoder will encode the discardability into the packetlize header. Therefore, We can drop the discardable packets without affecting its decodability in the middle-box of the Internet.The dynamic decisions on which video packets to drop can be sub-optimally done by streaming servers or clients without the global knowledge of the Internet. The better way to appraoch is through {\em Media-Aware Network Elements (MANEs)}, which are switches with knowledge of packets header. 
+
+
+\begin{comment}
+Over-The-Top (OTT) video streaming services, like Apple TV, Netflix, and Hulu,
+have become very popular, e.g., the streaming device market is projected to
+exceed 25 billion USD by 2024, with a 15\%+ annual growth on unit shipments~\cite{ott_market}. These OTT services offer 4k resolution
+video sequences, and thus incur high traffic amount on the
+best-effort Internet. {\em Scalable Video Coding (SVC)} is a promising solution
+to mitigate such excessive traffic: each scalable video
+sequence contains a base and multiple enhancement layers, while higher
+enhancement layers can be dropped without affecting its decodability.  
+The dynamic
+decisions on which video packets to
+drop can be sub-optimally done by
+streaming servers or clients without the global knowledge on the network.
+A better way for making decisions is through {\em
+Media-Aware Network Elements (MANEs)}, which are switches that have access to
+the video-related packet headers and local network conditions, and thus can
+make better decisions. By collaboratively considering multiple OTT video
+streams sent across a set of interconnected MANEs, an even higher video
+quality level is possible. 
+
+Unfortunately, replacing regular switches with MANEs is quite expensive and therefore less likely to happen.
+However, with recent advances in {\em Software-Defined Networking (SDN)} and
+{\em Network Function Virtualization (NFV)}, network switches are much more
+{\em programmable}, which in turn make collaborative MANEs into a reality. 
+A recent market report points out that the
+SDN/NFV investments from Internet Service Providers (ISPs) 
+are expected to grow at an annual rate of 45\% between 2017 and 2020~\cite{sdn_market}. In
+other words, programmable switches are going to be deployed in the Internet
+scale, and {\em these switches can be programmed into collaborative MANEs for
+optimally streaming scalable video sequences.}
+
+
+In this work, we prototype the very first MANE in P4 programming
+language~\cite{BDGI+14} for scalable video streaming. P4 is designed for
+realizing different network protocols (in software) on packet processors that
+can forward packets at the line speed. We implement intelligent media-aware
+packet drop logics in packet processors of P4 switches, and we connect
+multiple P4 switches to an ONOS controller through P4 runtime for a
+network of collaborative MANEs. We demonstrate our prototype system using
+mininet or a few real P4 switches to show its
+practicality. Real scalable video sequences are created and used
+in our demonstrations, while several demonstration scenarios are used to
+show the merits of our system. 
+\end{comment}
