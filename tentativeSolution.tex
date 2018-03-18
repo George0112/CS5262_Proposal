@@ -10,4 +10,4 @@ To drop scalable video packets to retain streamed video quality when bandwidth i
     \label{architecture} 
 \end{figure}
 
-Figure. ~\ref{architecture} show our architecture of the whole system. It is composed of a sender, some clients, some P4-based MANEs, some regular switches, and a ONOS controller connects those MANEs. The ONOS controller forms a control plane disassociate from the data plane. 
+Figure. ~\ref{architecture} shows our architecture of the whole system. It is composed of a sender, some clients, some P4-based MANEs, some regular switches, and a ONOS controller connects those MANEs. The ONOS controller forms a control plane disassociate from the data plane. The ONOS controller has the knowledge of the whold Internet. Therefore, it can optimally change the flow among those links. We may also notice the sender to let it adjust the sending bitrate if we encounter a network congestion. 
