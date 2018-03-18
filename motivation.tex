@@ -1,12 +1,13 @@
-\section{Introduction} \label{sec:introduction}
+\section{Motivation} \label{sec:motivation}
 
 In recent years, people are getting used to rely on Over-The-Top (OTT) 
-services such as Skype, Facebook, online games, video streaming, etc. 
+services such as Skype, Facebook, video streaming, etc. 
 Among these services, video streaming is one of the services which 
-consumes the most network resources. Video streaming services needs 
-more and more bandwidth because custumers prefer higher video quality than before, and thus incurr high traffic amout on the best-effort Internet. Thus, streaming high quality video with less network resources becomes much more important.
+consumes the most network resources. Video streaming needs more and more bandwidth because receivers prefer higher video quality than before, and thus incur high traffic amount on the best-effort Internet. Thus, streaming high quality video with less network resources becomes much more important.
 
-{\em Scalable Video Coding (SVC) }is one of solutions for network congestion. Each of the SVC sequences contains a base and multiple enhancement layers. Furthermore, the encoder will encode the discardability into the packetlize header. Therefore, We can drop the discardable packets without affecting its decodability in the middle-box of the Internet.The dynamic decisions on which video packets to drop can be sub-optimally done by streaming servers or clients without the global knowledge of the Internet. The better way to appraoch is through {\em Media-Aware Network Elements (MANEs)}, which are switches with knowledge of packets header. 
+{\em Scalable Video Coding (SVC) }is one of solutions for network congestion. Each of the SVC sequences contains a base and multiple enhancement layers. Furthermore, the encoder will encode the discardability into the packetize header. Therefore, We can drop the discardable packets without affecting its decodability in the middle-box of the Internet.The dynamic decisions on which video packets to drop can be sub-optimally done by streaming servers or clients without the global knowledge of the Internet. The better way to approach is through {\em Media-Aware Network Elements (MANEs)}, which are switches with knowledge of packets header. However, changing the normal switches into MANEs is quite difficult and thus not likely to happen. Fortunately, with recent advances in {\em Software-Defined Networking (SDN)} and {\em Network Function Virtualization (NVF)}, network switches are much more programmable, and make collaborative MANEs into reality. 
+
+
 
 
 \begin{comment}
