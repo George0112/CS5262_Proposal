@@ -1,0 +1,58 @@
+\section{Drop Logics} \label{sec:dropLogics}
+
+In our system, we implement a MANE in P4 language between hosts. As we mention before, our goal is to ensure the decodablity of each packet or even select the packets with higher quality. We tend to achieve this goal by dropping packets that are not important, which means they may cause network condition and also cannot decode in receiver host. We design three drop logics and streaming real video to achieve this goal. The three drop logics are (i) tail, (ii) EL, and (iii) RDO. 
+
+\begin{algorithm}
+    \begin{algorithmic}[1]
+        \Procedure{Tail}{}
+        \If {$qLen > qT$} \text{drop next packet}
+        \Else \ \text{forward this packet}
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+Tail logic is the most easiest logic and it is similar to regular switches. We set a threshold, $qT$, to drop packets before the buffer in MANE is totally full. It's like a simple typical pure Random Early Detect(RED) method. However, even with RED, we cannot control which packet to send or drop. This can reduce the opportunity of network condition but it still forward undecodable packets and cause bandwidth waste.
+
+\begin{algorithm}
+    \begin{algorithmic}[1]
+        \Procedure{Enhancement Layer (EL)}{}
+        \If {$qLen > qT_3$} \text{drop Layers 1,2,3}
+        \Else 
+            \If {$qLen > qT_2$} \text{drop Layers 2,3}
+            \Else 
+                \If {$qLen > qT_1$} \text{drop Layers 3}
+                \Else \ \text{forward this packet}
+                \EndIf
+            \EndIf
+        \EndIf
+    $qT_3\ > qT_2\ > qT_1$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+In EL logic, we set three thresholds which are $qT_3$, $qT_2$, and $qT_1$. When the size of queue exceed one of the threshold, we drop more packets. We start with the highest threshold, $qT_3$, the network condition is very bad if the size of queue exceeds this threshold. Therefore we have to drop most of the packets. Here we drop all the packets belong to enhancement layer. On the other hand, if the size of queue only exceed lower threshold. That means the network condition is not that bad and we can forward more packets. Through this approach, we eliminate undecodable packets. The result of experiments will present in the following sections.
+
+\begin{algorithm}
+    \begin{algorithmic}[1]
+        \Procedure{Rate Distortion Optimize (RDO)}{}
+        \If {$qLen > qT_3$}
+        $drop\ if\ \dfrac{quality}{packetLen}\ <\ rT_3$
+        \Else 
+            \If {$qLen > qT_2$}
+            $drop\ if\ \dfrac{quality}{packetLen}\ <\ rT_2$
+            \Else\If {$qLen > qT_1$}
+                $drop\ if\ \dfrac{quality}{packetLen}\ <\ rT_1$
+                \Else \ \text{forward this packet}
+                \EndIf
+            \EndIf
+        \EndIf
+        
+    \Comment{$qT_3\ > qT_2\ > qT_1$}
+    \Comment{$rT_3\ > rT_2\ > rT_1$}
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+To use RDO, first we have to calculate the value we want to compare, quality/packetLen. We use the reference software, JSVM, to encode h.264 file for streaming. While encoding the h.264 file, we record the PSNR value of each layer of each frame. Then we calculate the difference of PSNR value of each layer and divide with the length of packet. This leads to a new value, RDO value, which we use to determine to drop that packet. Then we will write this value into the trace file to packetize this information into every packet. If we want to stream the video which provides more quality and use less bandwidth. In this scenario, the RDO value represents the importance level of that packet. Our MANE should be able to parse that value and select reserve bandwidth for packets with higher RDO value.
+
